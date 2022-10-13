@@ -5,12 +5,8 @@
 <img src=https://img.shields.io/github/issues/sweatpotato13/hyperion-history-api-docker?style=for-the-badge&logo=appveyor&color=informational />
 <img src=https://img.shields.io/github/issues-pr/sweatpotato13/hyperion-history-api-docker?style=for-the-badge&logo=appveyor&color=informational />
 </p>
-<br />
-<!-- PROJECT LOGO -->
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
 
+<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/sweatpotato13/hyperion-history-api-docker">
