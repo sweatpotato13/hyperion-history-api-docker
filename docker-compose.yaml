@@ -56,7 +56,7 @@ services:
 
   hyperion-indexer:
     container_name: hyperion-indexer
-    image: sweatpotato/hyperion-history-api:3.1.4
+    image: sweatpotato/hyperion-history-api:3.3.5
     restart: on-failure
     depends_on:
       - elasticsearch
@@ -73,7 +73,7 @@ services:
 
   hyperion-api:
     container_name: hyperion-api
-    image: sweatpotato/hyperion-history-api:3.1.4
+    image: sweatpotato/hyperion-history-api:3.3.5
     restart: on-failure
     ports:
       - 7001:7000
