@@ -10,12 +10,14 @@ services:
 
   rabbitmq:
     container_name: rabbitmq
-    image: rabbitmq:alpine
+    image: rabbitmq:management
     restart: on-failure
     environment:
       - RABBITMQ_DEFAULT_USER=username
       - RABBITMQ_DEFAULT_PASS=password
       - RABBITMQ_DEFAULT_VHOST=/hyperion
+    volumes:
+      - ./rabbitmq/data:/var/lib/rabbitmq
     ports:
       - 15672:15672
     networks:
@@ -34,6 +36,8 @@ services:
       - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
       - ELASTIC_USERNAME=elastic
       - ELASTIC_PASSWORD=password
+    volumes:
+      - ./elasticsearch/data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -76,7 +80,7 @@ services:
     image: sweatpotato/hyperion-history-api:3.3.5
     restart: on-failure
     ports:
-      - 7001:7000
+      - 7000:7000
     depends_on:
       - hyperion-indexer
     volumes:
