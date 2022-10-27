@@ -63,7 +63,7 @@ services:
 
   hyperion-indexer:
     container_name: hyperion-indexer
-    image: sweatpotato/hyperion-history-api:3.3.6
+    image: sweatpotato/hyperion-history-api:3.3.6-2
     restart: on-failure
     depends_on:
       - elasticsearch
@@ -76,11 +76,11 @@ services:
       - ./scripts/:/home/hyperion/scripts/
     networks:
       - hyperion
-    command: bash -c "/home/hyperion/scripts/run-hyperion.sh ${SCRIPT:-false} eos-indexer"
+    command: sh -c "/home/hyperion/scripts/run-hyperion.sh ${SCRIPT:-false} eos-indexer"
 
   hyperion-api:
     container_name: hyperion-api
-    image: sweatpotato/hyperion-history-api:3.3.6
+    image: sweatpotato/hyperion-history-api:3.3.6-2
     restart: on-failure
     ports:
       - 7000:7000
@@ -93,7 +93,7 @@ services:
       - ./scripts/:/home/hyperion/scripts/
     networks:
       - hyperion
-    command: bash -c "/home/hyperion/scripts/run-hyperion.sh ${SCRIPT:-false} eos-api"
+    command: sh -c "/home/hyperion/scripts/run-hyperion.sh ${SCRIPT:-false} eos-api"
 
 networks:
   hyperion:
