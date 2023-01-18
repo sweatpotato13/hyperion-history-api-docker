@@ -1,7 +1,7 @@
 FROM node:16.5 as builder
 RUN git clone https://github.com/eosrio/hyperion-history-api.git
 WORKDIR /hyperion-history-api
-RUN git checkout v3.3.6-2
+RUN git checkout v3.3.9
 
 FROM node:alpine
 RUN npm install -g pm2
